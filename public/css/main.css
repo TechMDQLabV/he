@@ -1,7 +1,8 @@
 body {
+    padding-top: 90px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #000000;
+    /*background-color: #000000;*/
     /*background-size: 100% 100%;*/
     background-size: cover;
     background-position: center;
@@ -12,6 +13,23 @@ body {
     margin-bottom: 60px;
  /*   background-image: url(../images/backgrounds/IMG_20191029_141726586.jpg);
     background-image: url(../images/backgrounds/IMG_20191218_155115192.jpg);*/
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+.page-section {
+    padding: 8rem 0;
+}
+
+section {
+    padding-top: 130px;
 }
 
 html {
@@ -121,6 +139,7 @@ map:hover {
 .font24 { font-size: 24px;}
 
 .loader {
+    display: block;
     position: fixed;
     left: 0px;
     top: 0px;
