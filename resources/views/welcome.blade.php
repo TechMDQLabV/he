@@ -11,7 +11,7 @@
 
 @section('content')
     <!-- Masthead -->
-    <header class="masthead mb-5 mt-5">
+    <header class="masthead mt-5" id="enterprise">
         <div class=" h-100 div_trans8">
             <div class="row h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
@@ -21,15 +21,16 @@
                 </div>
                 <div class="col-lg-6 align-self-baseline">
                     <p class="text-white font-weight-light mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
-                    <a class="btn btn-outline-danger btn-xl js-scroll-trigger mb-5" href="#about">Continuar</a>
+                    <p class="text-white font-weight-light mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
+                    <a class="btn btn-outline-danger btn-xl js-scroll-trigger mb-5" href="#products" title="Continuar">Continuar</a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section class="page-section bg-danger" id="about">
-        <div class="container">
+    <!-- Products Section -->
+    <section class="page-section" id="products">
+        <div class="bg-danger">
             <div class="row justify-content-center">
                 <div class="col-lg-8 justify-content-center text-center">
                     <h2 class="text-white mt-2">Productos</h2>
@@ -80,15 +81,15 @@
                             </a>
                         </div>
                     </div>
-                    <a class="btn btn-outline-light btn-xl js-scroll-trigger mt-5 mb-5" href="#services">Servicios</a>
+                    <a class="btn btn-outline-light btn-xl js-scroll-trigger mt-5 mb-5" href="#services" title="Servicios">Servicios</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="page-section div_trans8 mb-5 mt-5 pb-5" id="services">
-        <div class="container text-center">
+    <section class="page-section" id="services">
+        <div class="div_trans8 pb-5 text-center">
             <h2 class="text-center mt-0"></h2>
             <hr class="divider my-4">
 
@@ -128,69 +129,69 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-outline-light btn-xl js-scroll-trigger mt-5 mb-5" href="#portfolio">Proyectos</a>
+            <a class="btn btn-outline-light btn-xl js-scroll-trigger mt-5 mb-2" href="#projects" title="Proyectos">Proyectos</a>
         </div>
     </section>
 
-     <!-- Portfolio Section -->
-    <section id="portfolio" class="div_trans8 mb-5 mt-5 pb-5">
-        <div class="container-fluid p-0 text-center">
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <h2 class="text-white mt-3">Proyectos</h2>
+     <!-- Projects Section -->
+        <section id="projects" class="">
+            <div class="div_trans8 pb-5 text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <h2 class="text-white mt-3">Proyectos</h2>
+                    </div>
                 </div>
+
+                <div class="row no-gutters">
+                    <div class="col-lg-4 col-sm-6 mt-4">
+                        <a href="images/projects/project01.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                            <img class="img-fluid" src="./images/projects/project01.jpg" alt="">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 mt-4">
+                        <a href="images/projects/project02.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                            <img class="img-fluid" src="./images/projects/project02.jpg" alt="">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 mt-4">
+                        <a href="images/projects/project03.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                            <img class="img-fluid" src="./images/projects/project03.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="images/projects/project04.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                            <img class="img-fluid" src="./images/projects/project04.jpg" alt="">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="images/projects/project05.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                            <img class="img-fluid" src="./images/projects/project05.jpg" alt="">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="images/projects/project06.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                            <img class="img-fluid" src="./images/projects/project06.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <a class="btn btn-outline-light btn-xl js-scroll-trigger mt-5" href="#contact" title="Contacto">Contacto</a>
             </div>
+        </section>
 
-            <div class="row no-gutters">
-                <div class="col-lg-4 col-sm-6 mt-4">
-                    <a href="images/projects/project01.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
-                        <img class="img-fluid" src="./images/projects/project01.jpg" alt="">
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 mt-4">
-                    <a href="images/projects/project02.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
-                        <img class="img-fluid" src="./images/projects/project02.jpg" alt="">
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 mt-4">
-                    <a href="images/projects/project03.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
-                        <img class="img-fluid" src="./images/projects/project03.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="row no-gutters">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="images/projects/project04.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
-                        <img class="img-fluid" src="./images/projects/project04.jpg" alt="">
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="images/projects/project05.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
-                        <img class="img-fluid" src="./images/projects/project05.jpg" alt="">
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="images/projects/project06.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
-                        <img class="img-fluid" src="./images/projects/project06.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <a class="btn btn-outline-light btn-xl js-scroll-trigger mt-5" href="#contact">Contacto</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="page-section div_trans8" id="contact">
-        <div class="container">
+        <!-- Contact Section -->
+    <section class="page-section" id="contact">
+        <div class=" div_trans8">
             <div class="row justify-content-center">
                 <div class="mt-3 col-lg-8 text-center">
                     <h2 class="text-white">Contacto</h2>
                     <hr class="divider my-4">
-                    <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    <p class="text-muted mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -227,7 +228,7 @@
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-outline-light">Enviar</button>
                         </div>
-
+                        <hr class="divider my-4">
                     </form>
                 </div>
             </div>

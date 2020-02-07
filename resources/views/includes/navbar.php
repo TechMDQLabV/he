@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark mt-2 div_trans8">
 
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark mt-2 div_trans8 fixed-top">
+
         <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNavigate" aria-controls="navbarNavigate" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,7 +37,7 @@
                 <li class="nav-item ">
                     <a class="nav-link text-white" href="#projects" title="Proyectos"><span class="font24 t-red ml-2"><b>P</b></span>royectos</a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item mr-4">
                     <a class="nav-link text-white" href="#contact" title="Contacto"><span class="font24 t-red ml-2"><b>C</b></span>ontacto</a>
                 </li>
             </ul>
@@ -46,5 +46,5 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Buscar Producto" aria-label="Search">
             <button class="btn btn-danger my-2 my-sm-0" type="submit">Buscar</button>
         </form>
-    </div>
 </nav>
+
