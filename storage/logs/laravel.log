@@ -978,3 +978,194 @@
 #55 C:\\Users\\TechMDQ\\Downloads\\developer\\he\\server.php(21): require_once('C:\\\\Users\\\\TechMD...')
 #56 {main}
 "} 
+[2020-02-08 18:25:12] local.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`)) at C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('alter table `us...', Array, Object(Closure))
+#1 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('alter table `us...', Array, Object(Closure))
+#2 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(97): Illuminate\\Database\\Connection->statement('alter table `us...')
+#3 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(290): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(167): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Database\\Schema\\Builder->create('users', Object(Closure))
+#6 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\database\\migrations\\2014_10_12_000000_create_users_table.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#7 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(392): CreateUsersTable->up()
+#8 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(401): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(200): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateUsersTable), 'up')
+#10 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(165): Illuminate\\Database\\Migrations\\Migrator->runUp('C:\\\\Users\\\\mauro\\\\...', 1, false)
+#11 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(110): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#12 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(71): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#13 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#14 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#15 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#17 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#18 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#19 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(173): Illuminate\\Container\\Container->call(Array)
+#20 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(160): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#22 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(1012): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(272): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 {main}
+
+[previous exception] [object] (PDOException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes at C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:463)
+[stacktrace]
+#0 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(463): PDOStatement->execute()
+#1 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('alter table `us...', Array)
+#2 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('alter table `us...', Array, Object(Closure))
+#3 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(464): Illuminate\\Database\\Connection->run('alter table `us...', Array, Object(Closure))
+#4 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(97): Illuminate\\Database\\Connection->statement('alter table `us...')
+#5 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(290): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#6 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(167): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#7 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(261): Illuminate\\Database\\Schema\\Builder->create('users', Object(Closure))
+#8 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\database\\migrations\\2014_10_12_000000_create_users_table.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#9 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(392): CreateUsersTable->up()
+#10 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(401): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#11 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(200): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateUsersTable), 'up')
+#12 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(165): Illuminate\\Database\\Migrations\\Migrator->runUp('C:\\\\Users\\\\mauro\\\\...', 1, false)
+#13 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(110): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#14 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(71): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#15 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#16 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#17 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#19 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#20 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#21 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(173): Illuminate\\Container\\Container->call(Array)
+#22 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#23 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(160): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#24 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(1012): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(272): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#28 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#29 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#30 {main}
+"} 
+[2020-02-08 18:26:38] local.ERROR: Command "make:auth" is not defined.
+
+Did you mean one of these?
+    make:channel
+    make:command
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make:auth\" is not defined.
+
+Did you mean one of these?
+    make:channel
+    make:command
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php:670)
+[stacktrace]
+#0 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(236): Symfony\\Component\\Console\\Application->find('make:auth')
+#1 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-02-08 18:26:59] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'matafuegos.password_resets' doesn't exist (SQL: delete from `password_resets` where `created_at` < 2020-02-08 17:26:59) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'matafuegos.password_resets' doesn't exist (SQL: delete from `password_resets` where `created_at` < 2020-02-08 17:26:59) at C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:669)
+[stacktrace]
+#0 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('delete from `pa...', Array, Object(Closure))
+#1 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(495): Illuminate\\Database\\Connection->run('delete from `pa...', Array, Object(Closure))
+#2 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(440): Illuminate\\Database\\Connection->affectingStatement('delete from `pa...', Array)
+#3 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2796): Illuminate\\Database\\Connection->delete('delete from `pa...', Array)
+#4 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Passwords\\DatabaseTokenRepository.php(204): Illuminate\\Database\\Query\\Builder->delete()
+#5 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Console\\ClearResetsCommand.php(30): Illuminate\\Auth\\Passwords\\DatabaseTokenRepository->deleteExpired()
+#6 [internal function]: Illuminate\\Auth\\Console\\ClearResetsCommand->handle()
+#7 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#8 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#9 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#10 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#11 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#12 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(173): Illuminate\\Container\\Container->call(Array)
+#13 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#14 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(160): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(1012): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(272): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Auth\\Console\\ClearResetsCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 {main}
+
+[previous exception] [object] (PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'matafuegos.password_resets' doesn't exist at C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:484)
+[stacktrace]
+#0 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(484): PDO->prepare('delete from `pa...')
+#1 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(662): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('delete from `pa...', Array)
+#2 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(629): Illuminate\\Database\\Connection->runQueryCallback('delete from `pa...', Array, Object(Closure))
+#3 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(495): Illuminate\\Database\\Connection->run('delete from `pa...', Array, Object(Closure))
+#4 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(440): Illuminate\\Database\\Connection->affectingStatement('delete from `pa...', Array)
+#5 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2796): Illuminate\\Database\\Connection->delete('delete from `pa...', Array)
+#6 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Passwords\\DatabaseTokenRepository.php(204): Illuminate\\Database\\Query\\Builder->delete()
+#7 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Console\\ClearResetsCommand.php(30): Illuminate\\Auth\\Passwords\\DatabaseTokenRepository->deleteExpired()
+#8 [internal function]: Illuminate\\Auth\\Console\\ClearResetsCommand->handle()
+#9 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#10 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#11 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#12 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#13 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#14 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(173): Illuminate\\Container\\Container->call(Array)
+#15 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#16 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(160): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#17 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(1012): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(272): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Auth\\Console\\ClearResetsCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 {main}
+"} 
+[2020-02-08 18:29:36] local.ERROR: Command "ui" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"ui\" is not defined. at C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php:670)
+[stacktrace]
+#0 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(236): Symfony\\Component\\Console\\Application->find('ui')
+#1 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-02-08 18:29:54] local.ERROR: Command "ui" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"ui\" is not defined. at C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php:670)
+[stacktrace]
+#0 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(236): Symfony\\Component\\Console\\Application->find('ui')
+#1 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\mauro\\Desktop\\Trabajo Proyecto\\he\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
