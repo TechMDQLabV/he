@@ -18,5 +18,8 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
     Route::get('/drafts', 'DraftController@index');
     Route::get('/drafts/create', 'DraftController@create');
     Route::post('/drafts', 'DraftController@store');
+    Route::get('/drafts/{draft}/edit', 'DraftController@edit');
+    Route::post('/drafts/{draft}/edit', 'DraftController@update');
+    Route::get('/drafts/{id}/del', 'DraftController@destroy'); 
 
 });

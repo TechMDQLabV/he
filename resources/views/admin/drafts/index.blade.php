@@ -22,12 +22,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($drafts as $key => $category)
+                    @foreach ($drafts as  $draft)
+                       
                     <tr>
-                        <td align="left">{{ $category->title }}</td>
-                        <td align="left">{{ $category->description }}</td>
+                        <td align="left">{{ $draft->title }}</td>
+                        <td align="left">{{ $draft->description }}</td>
                         <td>
-                            <img src="{{ $category->image }}" height="50">
+                            <img src={{$draft->featured_image_url}} height="50">
+                        </td>
+                        <td class="td-actions text-right">
+                            <a href="#" rel="tooltip" title="Ver Proyecto"><i class="fa fa-info font24 t-blue"></i></a>&nbsp;&nbsp;
+                            <a href="{{ url('/admin/drafts/'.$draft->id.'/edit') }}" rel="tooltip" title="Editar proyecto"><i class="fa fa-edit font24 t-yellow"></i></a>&nbsp;&nbsp;
+                            <!-- <a href="{{ url('/admin/drafts/'.$draft->id.'/del') }}" rel="tooltip" title="Eliminar"><i class="fa fa-times font24 t-red"></i></a>&nbsp;&nbsp; -->
                         </td>
                         
                     </tr>
