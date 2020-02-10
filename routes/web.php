@@ -22,4 +22,17 @@ Route::prefix('admin')->namespace('Admin')->group(function(){
     Route::post('/drafts/{draft}/edit', 'DraftController@update');
     Route::get('/drafts/{id}/del', 'DraftController@destroy'); 
 
+    Route::get('/drafts/{id}/images', 'DraftImageController@index'); // listado
+	Route::post('/drafts/{id}/images', 'DraftImageController@store'); // registrar
+	Route::delete('/drafts/{id}/images', 'DraftImageController@destroy'); // form eliminar	
+    Route::get('/drafts/{id}/images/select/{image}', 'DraftImageController@select'); // destacar 
+    
+    Route::get('/products', 'ProductController@index');
+    Route::get('/products/create', 'ProductController@create');
+    Route::post('/products', 'ProductController@store');
+    Route::get('/products/{draft}/edit', 'ProductController@edit');
+    Route::post('/products/{draft}/edit', 'ProductController@update');
+    Route::get('/products/{id}/del', 'ProductController@destroy'); 
+
+
 });

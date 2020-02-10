@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Draft;
+use App\Model\DraftImage;
 use File;
 
 class DraftController extends Controller
@@ -44,19 +45,7 @@ class DraftController extends Controller
     {
         $this->validate($request, Draft::$rules, Draft::$messages);
         $draft = Draft::create($request->only('title', 'description'));
-
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $path = public_path() . '/images/drafts';
-            $fileName = uniqid() . '-' . $file->getClientOriginalName();
-            $moved = $file->move($path, $fileName);
-            
-            // update draft
-            if ($moved) {
-                $draft->image = $fileName;
-                $draft->save(); // UPDATE
-            }
-        }
+        $draft->save();
         return redirect('/admin/drafts');
     }
 
@@ -91,28 +80,8 @@ class DraftController extends Controller
      */
     public function update(Request $request, Draft $draft)
     {
-        
         $this->validate($request, Draft::$rules, Draft::$messages);
-
-        $draft->update($request->only('title', 'description'));
-        //dd($draft);
-
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $path = public_path() . '/images/drafts';
-            $fileName = uniqid() . '-' . $file->getClientOriginalName();
-            $moved = $file->move($path, $fileName);
-
-            if ($moved) {
-                $previousPath = $path . '/' . $draft->image;
-
-                $draft->image = $fileName;
-                $saved = $draft->save(); // UPDATE
-
-                if ($saved)
-                    File::delete($previousPath);
-            } 
-        } 
+        $draft->update($request->all());
         return redirect('/admin/drafts');
     }
 
@@ -122,9 +91,16 @@ class DraftController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Draft $draft)
-    {
-        $category->delete(); // DELETE
+    public function destroy($id)
+    {   
+        $draftImage = DraftImage::where('draft_id','=',$id)->get();
+        foreach ($draftImage as $image) {
+           $image->delete();
+        }
+        //dd($draftImage);
+        $draft = Draft::find($id)->first();
+        //dd($draft);
+        $draft->delete(); // DELETE
         return back();
     }
 }

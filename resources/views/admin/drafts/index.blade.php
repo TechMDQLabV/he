@@ -17,7 +17,6 @@
                     <tr class="b-yellow">
                         <th class="col-md-2 text-center">Nombre</th>
                         <th class="col-md-5 text-center">Descripción</th>
-                        <th class="text-center">Imagen</th>
                         <th class="text-right">Opciones</th>
                     </tr>
                 </thead>
@@ -27,13 +26,12 @@
                     <tr>
                         <td align="left">{{ $draft->title }}</td>
                         <td align="left">{{ $draft->description }}</td>
-                        <td>
-                            <img src={{$draft->featured_image_url}} height="50">
-                        </td>
-                        <td class="td-actions text-right">
-                            <a href="#" rel="tooltip" title="Ver Proyecto"><i class="fa fa-info font24 t-blue"></i></a>&nbsp;&nbsp;
-                            <a href="{{ url('/admin/drafts/'.$draft->id.'/edit') }}" rel="tooltip" title="Editar proyecto"><i class="fa fa-edit font24 t-yellow"></i></a>&nbsp;&nbsp;
-                            <!-- <a href="{{ url('/admin/drafts/'.$draft->id.'/del') }}" rel="tooltip" title="Eliminar"><i class="fa fa-times font24 t-red"></i></a>&nbsp;&nbsp; -->
+                        
+                        <td class="text-right">                                    
+                            <a href="{{ url('/drafts/'.$draft->id) }}" rel="tooltip" title="Ver proyecto" target="_blank"><i class="fa fa-info font24 t-blue"></i></a>&nbsp;&nbsp;                                
+                            <a href="{{ url('/admin/drafts/'.$draft->id.'/edit') }}" rel="tooltip" title="Editar proyecto"><i class="fa fa-edit font24 t-yellow"></i></a>&nbsp;&nbsp;                                                       
+                            <a href="{{ url('/admin/drafts/'.$draft->id.'/images') }}" rel="tooltip" title="Imágenes del proyecto"><i class="fa fa-image font24 t-black"></i></a>&nbsp;&nbsp;
+                            <a href="{{ url('/admin/drafts/'.$draft->id.'/del') }}" rel="tooltip" title="Eliminar"><i class="fa fa-times font24 t-red"></i></a>&nbsp;
                         </td>
                         
                     </tr>

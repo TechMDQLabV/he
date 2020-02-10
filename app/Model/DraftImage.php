@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class DraftImage extends Model
 {
-    public function draft(){
+    /* public function draft(){
         return $this->belongsTo(Draft::class);
-    }
+    } */
 
     public function getUrlAttribute()
     {

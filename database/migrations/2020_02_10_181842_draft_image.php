@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDraftsTable extends Migration
+class DraftImage extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateDraftsTable extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('drafts', function (Blueprint $table) {
+    {   Schema::create('draft_images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->text('description');
-            $table->timestamps();
+            $table->boolean('featured')->default(false);
+            $table->integer('draft_id')->unsigned();
+            $table->foreign('draft_id')->references('id')->on('drafts')
+            ->onDelete('cascade');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateDraftsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('drafts');
+        Schema::dropIfExists('draft_images');
     }
 }
