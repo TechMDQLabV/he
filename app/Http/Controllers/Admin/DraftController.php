@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Draft;
-use App\Model\DraftImage;
+use File;
 
 class DraftController extends Controller
 {
@@ -18,6 +18,7 @@ class DraftController extends Controller
     {
         
         $drafts = Draft::all();
+        
         //return view('admin.drafts.index');
         return view('admin.drafts.index')->with(compact('drafts'));
     }
@@ -41,7 +42,7 @@ class DraftController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request, Draft::$rules, Draft::$messages);
         $draft = Draft::create($request->only('title', 'description'));
 
         if ($request->hasFile('image')) {
@@ -76,9 +77,9 @@ class DraftController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Draft $draft)
     {
-        //
+        return view('admin.drafts.edit')->with(compact('draft'));
     }
 
     /**
@@ -88,9 +89,31 @@ class DraftController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Draft $draft)
     {
-        //
+        
+        $this->validate($request, Draft::$rules, Draft::$messages);
+
+        $draft->update($request->only('title', 'description'));
+        //dd($draft);
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $path = public_path() . '/images/drafts';
+            $fileName = uniqid() . '-' . $file->getClientOriginalName();
+            $moved = $file->move($path, $fileName);
+
+            if ($moved) {
+                $previousPath = $path . '/' . $draft->image;
+
+                $draft->image = $fileName;
+                $saved = $draft->save(); // UPDATE
+
+                if ($saved)
+                    File::delete($previousPath);
+            } 
+        } 
+        return redirect('/admin/drafts');
     }
 
     /**
@@ -99,8 +122,9 @@ class DraftController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Draft $draft)
     {
-        //
+        $category->delete(); // DELETE
+        return back();
     }
 }
