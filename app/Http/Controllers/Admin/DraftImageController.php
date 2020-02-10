@@ -1,85 +1,66 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Model\Draft;
+use App\Model\DraftImage;
+use File;
 class DraftImageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    
+    public function index($id)
     {
-        //
+        $draft = Draft::find($id);
+        $images = $draft->images()->orderBy('featured','desc')->get();
+        return view ('admin.drafts.images.index')->with(compact('draft','images'));
+    }
+    public function store(Request $request, $id)
+    {
+        $file = $request->file('photo');
+    	$path = public_path() . '/images/drafts';
+	    $fileName = uniqid() . $file->getClientOriginalName();
+    	$moved = $file->move($path, $fileName);
+    	
+    	// crear 1 registro en la tabla draft_image
+    	if ($moved) {
+	    	$draftImage = new DraftImage();
+	    	$draftImage->image = $fileName;
+	    	$draftImage->draft_id = $id;
+	    	$draftImage->save(); // INSERT
+        }
+        return back();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function destroy(Request $request, $id)
     {
-        //
+    	// eliminar el archivo
+    	$draftImage = DraftImage::find($request->input('image_id'));
+    	if (substr($draftImage->image, 0, 4) === "http") {
+    		$deleted = true;
+    	} else {
+    		$fullPath = public_path().'/images/drafts/'.$draftImage->image;
+    		$deleted = File::delete($fullPath);
+    	}
+
+    	// eliminar el registro de la img en la bd
+    	if ($deleted) {
+    		$draftImage->delete();
+    	}
+
+    	return back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function select($id, $image)
     {
-        //
-    }
+        DraftImageController::where('draft_id', $id)->update([
+            'featured' => false
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        $draftImage = DraftImage::find($image);
+        $draftImage->featured = true;
+        $draftImage->save();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return back();
     }
 }

@@ -16,16 +16,33 @@ class Draft extends Model
     public static $rules = [
         'title' => 'required|min:3'
     ];
+   /*  public function images(){
+        return $this->hasMany(DraftImage::class);
+    } 
     
     public function getFeaturedImageUrlAttribute()
+
     {
-        if ($this->image)
-            return '/images/drafts/'.$this->image;
-        // else
-        $firstDrafts = $this->drafts()->first();
-        if ($firstDrafts)
-            return $firstDrafts->featured_image_url;
+
+        $featuredImage = $this->images()->where('featured', true)->first();
+
+        if (!$featuredImage)
+
+            $featuredImage = $this->images()->first();
+
+
+
+        if ($featuredImage) {
+
+            return $featuredImage->url;
+
+        }
+
+
+
+        // default
 
         return '/images/default.gif';
-    }
+
+    }*/
 }

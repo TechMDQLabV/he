@@ -32,16 +32,7 @@
                             <input type="text" class="form-control" name="title" value="{{ old('title', $draft->title) }}">
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <label class="control-label">Imagen del Proyecto</label>
-                        <input type="file" name="image">
-                        @if ($draft->image)
-                        <p class="help-block">
-                            Subir sólo si desea reemplazar la 
-                            <a href="{{ asset('/images/drafts/'.$draft->image) }}" target="_blank">imagen actual</a>
-                        </p>
-                        @endif
-                    </div>                    
+                                      
                 </div>
 
                 <textarea class="form-control" placeholder="Descripción de la categoría" rows="5" name="description">{{ old('description', $draft->description) }}</textarea>
