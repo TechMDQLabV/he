@@ -16,7 +16,7 @@ class Draft extends Model
     public static $rules = [
         'title' => 'required|min:3'
     ];
-   /*  public function images(){
+    public function images(){
         return $this->hasMany(DraftImage::class);
     } 
     
@@ -44,5 +44,5 @@ class Draft extends Model
 
         return '/images/default.gif';
 
-    }*/
+    }
 }
