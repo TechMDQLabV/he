@@ -17,9 +17,9 @@ class DraftController extends Controller
      */
     public function index()
     {
-        
+
         $drafts = Draft::all();
-        
+
         //return view('admin.drafts.index');
         return view('admin.drafts.index')->with(compact('drafts'));
     }
@@ -31,7 +31,6 @@ class DraftController extends Controller
      */
     public function create()
     {
-        //return "hola";
         return view('admin.drafts.create');
     }
 
@@ -78,11 +77,13 @@ class DraftController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Draft $draft)
+    public function update(Request $request)
     {
+        $draft = Draft::find($request->id);
         $this->validate($request, Draft::$rules, Draft::$messages);
         $draft->update($request->all());
-        return redirect('/admin/drafts');
+        //return redirect('/admin/drafts');
+        return back();
     }
 
     /**
@@ -91,16 +92,25 @@ class DraftController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {   
-        $draftImage = DraftImage::where('draft_id','=',$id)->get();
-        foreach ($draftImage as $image) {
-           $image->delete();
+    public function destroy(Request $request)
+    {
+        try {
+            $draft = Draft::findOrFail($request->id)->get();
+            $images = DraftImage::where('draft_id', $request->id)->get();
+            foreach($images as $image){
+                if (substr($image->image, 0, 4) === "http") {
+                    $deleted = true;
+                } else {
+                    $fullPath = public_path() . '/images/drafts/' . $image->image;
+                    $deleted = File::delete($fullPath);
+                }
+            }
+            Draft::findOrFail($request->id)->delete();
+            $notification = "El registro se eliminó correctamente";
+        } catch (QueryException $exception){
+            $notification = "Error al eliminar el registro".$exception->getMessage();
         }
-        //dd($draftImage);
-        $draft = Draft::find($id)->first();
-        //dd($draft);
-        $draft->delete(); // DELETE
-        return back();
+
+        return back()->with(compact('notification'));
     }
 }

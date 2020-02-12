@@ -133,7 +133,7 @@
         </div>
     </section>
 
-     <!-- Projects Section -->
+     <!-- Projects Section only 3 proyects with title -->
         <section id="projects" class="">
             <div class="div_trans8 pb-5 text-center">
                 <div class="row justify-content-center">
@@ -141,48 +141,101 @@
                         <h2 class="text-white mt-3">Proyectos</h2>
                     </div>
                 </div>
-
-                <div class="row no-gutters">
+                <div class="row no-gutters text-left">
                     <div class="col-lg-4 col-sm-6 mt-4">
-                        <a href="images/projects/project01.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
-                            <img class="img-fluid" src="./images/projects/project01.jpg" alt="">
-                        </a>
+                        <h5 class="text-white-50 ml-2">Nombre del Proyecto</h5>
                     </div>
 
                     <div class="col-lg-4 col-sm-6 mt-4">
+                        <h5 class="text-white-50 ml-2">Nombre del Proyecto</h5>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 mt-4">
+                        <h5 class="text-white-50 ml-2">Nombre del Proyecto</h5>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class="col-lg-4 col-sm-6 mt-2">
+                        <a href="images/projects/project01.jpg" data-toggle="lightbox" data-gallery="projects-lightboxID1" data-title="Titulo del Proyecto" data-footer="algo del proyecto id" class="">
+                            <img class="img-fluid" src="./images/projects/project01.jpg" alt="">
+                        </a>
+                        <a href="images/projects/project0101.jpg" data-toggle="lightbox" data-gallery="projects-lightboxID1" data-title="Titulo del Proyecto" data-footer="algo del proyecto id" class="">
+                            <img class="img-fluid d-none" src="./images/projects/project0101.jpg" alt="">
+                        </a>
+                        <a href="images/projects/project0102.jpg" data-toggle="lightbox" data-gallery="projects-lightboxID1" data-title="Titulo del Proyecto" data-footer="algo del proyecto id" class="">
+                            <img class="img-fluid d-none" src="./images/projects/project0102.jpg" alt="">
+                        </a>
+                        <a href="images/projects/project0103.jpg" data-toggle="lightbox" data-gallery="projects-lightboxID1" data-title="Titulo del Proyecto" data-footer="algo del proyecto id" class="">
+                            <img class="img-fluid d-none" src="./images/projects/project0103.jpg" alt="">
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 mt-2">
                         <a href="images/projects/project02.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
                             <img class="img-fluid" src="./images/projects/project02.jpg" alt="">
                         </a>
                     </div>
 
-                    <div class="col-lg-4 col-sm-6 mt-4">
+                    <div class="col-lg-4 col-sm-6 mt-2">
                         <a href="images/projects/project03.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
                             <img class="img-fluid" src="./images/projects/project03.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="row no-gutters">
-                    <div class="col-lg-4 col-sm-6">
-                        <a href="images/projects/project04.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
-                            <img class="img-fluid" src="./images/projects/project04.jpg" alt="">
-                        </a>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6">
-                        <a href="images/projects/project05.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
-                            <img class="img-fluid" src="./images/projects/project05.jpg" alt="">
-                        </a>
-                    </div>
-
-                    <div class="col-lg-4 col-sm-6">
-                        <a href="images/projects/project06.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
-                            <img class="img-fluid" src="./images/projects/project06.jpg" alt="">
                         </a>
                     </div>
                 </div>
                 <a class="btn btn-outline-light btn-xl js-scroll-trigger mt-5" href="#contact" title="Contacto">Contacto</a>
             </div>
         </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="">
+        <div class="div_trans8 pb-5 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <h2 class="text-white mt-3">Proyectos</h2>
+                </div>
+            </div>
+
+            <div class="row no-gutters">
+                <div class="col-lg-4 col-sm-6 mt-4">
+                    <a href="images/projects/project01.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                        <img class="img-fluid" src="./images/projects/project01.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 mt-4">
+                    <a href="images/projects/project02.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                        <img class="img-fluid" src="./images/projects/project02.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 mt-4">
+                    <a href="images/projects/project03.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                        <img class="img-fluid" src="./images/projects/project03.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="images/projects/project04.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                        <img class="img-fluid" src="./images/projects/project04.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <a href="images/projects/project05.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                        <img class="img-fluid" src="./images/projects/project05.jpg" alt="">
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <a href="images/projects/project06.jpg" data-toggle="lightbox" data-gallery="projects-lightbox" data-title="Titulo del Proyecto" data-footer="algo del proyecto" class="">
+                        <img class="img-fluid" src="./images/projects/project06.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <a class="btn btn-outline-light btn-xl js-scroll-trigger mt-5" href="#contact" title="Contacto">Contacto</a>
+        </div>
+    </section>
 
         <!-- Contact Section -->
     <section class="page-section" id="contact">
@@ -239,17 +292,14 @@
                 </div>
                 <div class="col-lg-3 mr-auto text-center mb-5">
                     <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-                    <!-- Make sure to change the email address in anchor text AND the link below! -->
                     <a class="d-block" href="mailto:contact@yourwebsite.com">contact@he-hidro.com</a>
                 </div>
                 <div class="col-lg-3 mr-auto text-center mb-5">
                     <i class="fab fa-whatsapp fa-3x mb-3 text-muted"></i>
-                    <!-- Make sure to change the email address in anchor text AND the link below! -->
                     <div class="text-white-50">+1 (202) 555-0149</div>
                 </div>
                 <div class="col-lg-3 mr-auto text-center mb-5">
                     <i class="fab fa-facebook fa-3x mb-3 text-muted"></i>
-                    <!-- Make sure to change the email address in anchor text AND the link below! -->
                     <div class="text-white-50">tu facebook</div>
                 </div>
             </div>
@@ -262,6 +312,7 @@
             <div class="small text-center text-white">Copyright &copy; 2019 - HE Hidro Extinción</div>
         </div>
     </footer>
+
 @stop
 
 @section('scripts')

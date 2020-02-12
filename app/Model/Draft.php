@@ -16,10 +16,10 @@ class Draft extends Model
     public static $rules = [
         'title' => 'required|min:3'
     ];
-    public function images(){
+     public function images(){
         return $this->hasMany(DraftImage::class);
-    } 
-    
+    }
+
     public function getFeaturedImageUrlAttribute()
 
     {

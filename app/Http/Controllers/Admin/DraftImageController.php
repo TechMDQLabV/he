@@ -8,7 +8,7 @@ use App\Model\DraftImage;
 use File;
 class DraftImageController extends Controller
 {
-    
+
     public function index($id)
     {
         $draft = Draft::find($id);
@@ -21,7 +21,7 @@ class DraftImageController extends Controller
     	$path = public_path() . '/images/drafts';
 	    $fileName = uniqid() . $file->getClientOriginalName();
     	$moved = $file->move($path, $fileName);
-    	
+
     	// crear 1 registro en la tabla draft_image
     	if ($moved) {
 	    	$draftImage = new DraftImage();
@@ -32,10 +32,10 @@ class DraftImageController extends Controller
         return back();
     }
 
-    public function destroy(Request $request, $id)
+    public function destroy(Request $request)
     {
     	// eliminar el archivo
-    	$draftImage = DraftImage::find($request->input('image_id'));
+    	$draftImage = DraftImage::find($request->image_id);
     	if (substr($draftImage->image, 0, 4) === "http") {
     		$deleted = true;
     	} else {
