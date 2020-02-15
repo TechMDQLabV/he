@@ -1,5 +1,5 @@
 body {
-    padding-top: 90px;
+    padding-top: 0px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     /*background-color: #000000;*/
@@ -28,7 +28,7 @@ hr {
     padding: 8rem 0;
 }
 
-section {
+section, header {
     padding-top: 130px;
 }
 
@@ -46,24 +46,13 @@ footer {
     line-height: 60px; /* Vertically center the text there */
 }
 
-area {
-   background-color:transparent;
-   }
-
-area:hover {
-   background-color:rgba(222,255,47,10);
-   }
-
-map {
-   background-color:#999;
-   }
-
-map:hover {
-   background-color:rgba(173,255,47,10);
-   }
-
 #div_transparente {
         background-color: rgba(0, 0, 0, 0.2);
+}
+
+a:link
+{
+    text-decoration:none;
 }
 
 .center {
