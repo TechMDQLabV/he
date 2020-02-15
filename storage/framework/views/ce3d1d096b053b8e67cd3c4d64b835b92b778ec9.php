@@ -1,102 +1,102 @@
-@extends('layouts.app')
+<?php $__env->startSection('title', 'Listado de productos'); ?>
 
-@section('title', 'Listado de Proyectos')
+<?php $__env->startSection('body-class', 'product-page'); ?>
 
-@section('body-class', 'proyects-page')
-
-@section('styles')
+<?php $__env->startSection('styles'); ?>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <header class="">
         <div class="text-white container div_trans8 corner4 mb-4 p-4">
-            <h2 class="text-center">Listado de Proyectos</h2>
-            @if (session('notification'))
+            <h2 class="text-center">Listado de Productos</h2>
+            <?php if(session('notification')): ?>
                 <div class="alert alert-success">
-                    {{ session('notification') }}
+                    <?php echo e(session('notification')); ?>
+
                 </div>
-            @endif
+            <?php endif; ?>
             <p>&nbsp;</p>
             <div class="">
                 <div class="">
-                    <p class="text-center"><a href="#modalDraftAdd" class="btn btn-outline-info btn-round" data-toggle="modal" data-target="#modalDraftAdd"title="Agregar Proyecto">Nuevo Proyecto</a></p>
+                    <p class="text-center"><a href="#modalProductAdd" class="btn btn-outline-info btn-round" data-toggle="modal" data-target="#modalProductAdd" title="Agregar Producto">Nuevo Producto</a></p>
                     <div class="row table-responsive-sm">
                         <div class="col-md-12">
-                            @if(count($drafts)>0)
-                                <table id="draftsTable" class="table table-striped text-white">
+                            <?php if(count($products)>0): ?>
+                                <table id="productsTable" class="table table-striped text-white">
                                     <thead>
                                     <tr>
-                                        <th class="text-center" width="25%">Nombre</th>
+                                        <th class="text-center" width="25%">Producto</th>
                                         <th class="text-center" width="35%">Descripción</th>
                                         <th class="text-center" width="20%">Opciones</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach ($drafts as $draft)
+                                    <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
-                                            <td class="text-left">{{ $draft->title }}</td>
-                                            <td class="text-left">{{ $draft->description }}</td>
+                                            <td class="text-left"><?php echo e($product->name); ?></td>
+                                            <td class="text-left"><?php echo e($product->description); ?></td>
                                             <td class="text-center">
-                                                <a href="#modalDraftDetail{{$draft->id}}" class="btn btn-outline-dark btn-sm" type="button" title="Detalle de {{ $draft->title }}" data-toggle="modal"  data-target="#modalDraftDetail{{$draft->id}}">&nbsp;<i class="fa fa-info t-yellow">&nbsp;</i></a>
-                                                <a href="#modalDraftEdit{{$draft->id}}" class="btn btn-outline-dark btn-sm" type="button" title="Editar Proyecto {{ $draft->title }}" data-toggle="modal" data-target="#modalDraftEdit{{$draft->id}}"><i class="fa fa-edit t-blue"></i></a>
-                                                <a href="{{ url('/admin/drafts/'.$draft->id.'/images') }}" class="btn btn-outline-dark btn-sm" type="button" title="Imágenes del Proyecto {{ $draft->title }}"><i class="fa fa-image text-success"></i></a>
-                                                <a href="#modalDeleteDraft{{$draft->id}}" class="btn btn-outline-dark btn-sm" type="button" title="Eliminar {{ $draft->title }}" data-toggle="modal" data-target="#modalDeleteDraft{{$draft->id}}"><i class="fa fa-times t-red"></i></a>
+                                                <a href="#modalProductDetail<?php echo e($product->id); ?>" class="btn btn-outline-dark btn-sm" type="button" title="Detalle de <?php echo e($product->name); ?>" data-toggle="modal"  data-target="#modalProductDetail<?php echo e($product->id); ?>">&nbsp;<i class="fa fa-info t-yellow">&nbsp;</i></a>
+                                                <a href="#modalProductEdit<?php echo e($product->id); ?>" class="btn btn-outline-dark btn-sm" type="button" title="Editar Producto <?php echo e($product->name); ?>" data-toggle="modal" data-target="#modalProductEdit<?php echo e($product->id); ?>"><i class="fa fa-edit t-blue"></i></a>
+                                                <a href="#modalDeleteProduct<?php echo e($product->id); ?>" class="btn btn-outline-dark btn-sm" type="button" title="Eliminar <?php echo e($product->name); ?>" data-toggle="modal" data-target="#modalDeleteProduct<?php echo e($product->id); ?>"><i class="fa fa-times t-red"></i></a>
                                             </td>
                                         </tr>
 
-                                        <!-- Modal Delete Proyect -->
-                                        <div class="modal fade text-center" id="modalDeleteDraft{{$draft->id}}" tabindex="-1" role="dialog" aria-labelledby="modalDeleteDraft{{$draft->id}}Title" aria-hidden="true">
+                                        <!-- Modal Delete Product -->
+                                        <div class="modal fade text-center" id="modalDeleteProduct<?php echo e($product->id); ?>" tabindex="-1" role="dialog" aria-labelledby="modalDeleteProduct<?php echo e($product->id); ?>Title" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header text-center bg-danger">
-                                                        <h5 class="modal-title text-white" id="modalDeleteDraft{{$draft->id}}Title">Desea Eliminar el Proyecto {{ $draft->title }}?</h5>
+                                                        <h5 class="modal-title text-white" id="modalDeleteProduct<?php echo e($product->id); ?>Title">Desea Eliminar el Producto <?php echo e($product->name); ?>?</h5>
                                                         <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                     </div>
                                                     <div class="modal-body text-dark">
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <h4>{{ $draft->title}}</h4>
+                                                                <h4><?php echo e($product->name); ?></h4>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <p>{{ $draft->description}}</p>
+                                                                <p><?php echo e($product->description); ?></p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form method="post" action="{{ url('/admin/drafts') }}">
-                                                            {{ csrf_field() }}
-                                                            {{ method_field('DELETE') }}
-                                                            <input type="hidden" name="id" value="{{ $draft->id }}">
+                                                        <form method="post" action="<?php echo e(url('/admin/products')); ?>">
+                                                            <?php echo e(csrf_field()); ?>
+
+                                                            <?php echo e(method_field('DELETE')); ?>
+
+                                                            <input type="hidden" name="id" value="<?php echo e($product->id); ?>">
                                                             <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-                                                            <button class="btn btn-outline-danger" type="submit" title="Eliminar {{ $draft->title }}"><i class="fa fa-times"></i> Eliminar</button>
+                                                            <button class="btn btn-outline-danger" type="submit" title="Eliminar <?php echo e($product->name); ?>"><i class="fa fa-times"></i> Eliminar</button>
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- End Modal Delete Proyect -->
+                                        <!-- End Modal Delete Product -->
 
-                                        <!-- Modal Proyect Detail -->
-                                        <div class="modal fade t-black text-center" id="modalDraftDetail{{$draft->id}}" tabindex="-1" role="dialog" aria-labelledby="modalDraftDetail{{$draft->id}}Title" aria-hidden="true">
+                                        <!-- Modal Product Detail -->
+                                        <div class="modal fade t-black text-center" id="modalProductDetail<?php echo e($product->id); ?>" tabindex="-1" role="dialog" aria-labelledby="modalProductDetail<?php echo e($product->id); ?>Title" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header text-center bg-warning text-white">
-                                                        <h5 class="modal-title" id="modalDraftDetail{{$draft->id}}Title">Detalle de {{ $draft->title }}</h5>
+                                                        <h5 class="modal-title" id="modalProductDetail<?php echo e($product->id); ?>Title">Detalle de <?php echo e($product->name); ?></h5>
                                                         <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                     </div>
                                                     <div class="modal-body text-dark">
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <h4>{{ $draft->title}}</h4>
+                                                                <h4><?php echo e($product->name); ?></h4>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-md-12">
-                                                                <p>{{ $draft->description}}</p>
+                                                                <p><?php echo e($product->description); ?></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -106,28 +106,29 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- End Modal Proyects Detail -->
+                                        <!-- End Modal Product Detail -->
 
-                                        <!-- Modal Proyect Edit -->
-                                        <div class="modal fade t-black" id="modalDraftEdit{{$draft->id}}" tabindex="-1" role="dialog" aria-labelledby="modalDraftEdit{{$draft->id}} Title" aria-hidden="true">
+                                        <!-- Modal Product Edit -->
+                                        <div class="modal fade t-black" id="modalProductEdit<?php echo e($product->id); ?>" tabindex="-1" role="dialog" aria-labelledby="modalProductEdit<?php echo e($product->id); ?> Title" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header bg-primary">
-                                                        <h5 class="modal-title text-white" id="modalDraftEdit{{$draft->id}}Title">Modificar Datos de {{ $draft->title }}</h5>
+                                                        <h5 class="modal-title text-white" id="modalProductEdit<?php echo e($product->id); ?>Title">Modificar Datos de <?php echo e($product->name); ?></h5>
                                                         <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                                     </div>
-                                                    <form method="post" action="{{ url('/admin/drafts/edit') }}">
+                                                    <form method="post" action="<?php echo e(url('/admin/products/edit')); ?>">
                                                         <div class="modal-body text-left">
-                                                            {{ csrf_field() }}
-                                                            <input type="hidden" name="id" value="{{ $draft->id }}">
+                                                            <?php echo e(csrf_field()); ?>
+
+                                                            <input type="hidden" name="id" value="<?php echo e($product->id); ?>">
 
                                                             <div class="form-group col-md-12">
-                                                                <label for="title" class="col-form-label">Título:</label>
-                                                                <input class="form-control" type="text" name="title" id="title" value="{{ $draft->title }}" autofocus>
+                                                                <label for="title" class="col-form-label">Producto:</label>
+                                                                <input class="form-control" type="text" name="name" id="name" value="<?php echo e($product->name); ?>" autofocus>
                                                             </div>
                                                             <div class="form-group col-md-12">
                                                                 <label for="description" class="col-form-label">Descripción:</label>
-                                                                <textarea class="form-control" placeholder="Descripción del proyecto" rows="5" name="description">{{ $draft->description }}</textarea>
+                                                                <textarea class="form-control" placeholder="Descripción del producto" rows="5" name="description"><?php echo e($product->description); ?></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
@@ -138,15 +139,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- End Modal Proyect Edit -->
+                                        <!-- End Modal Product Edit -->
 
-                                    @endforeach
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>
                                 </table>
 
-                            @else
+                            <?php else: ?>
                                 <h4>No hay proyectos cargados</h4>
-                            @endif
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -154,26 +155,27 @@
         </div>
     </header>
     <p>&nbsp;</p>
-    @include('includes.footer')
 
-    <!-- Modal Draft Add -->
-    <div class="modal fade t-black" id="modalDraftAdd" tabindex="-1" role="dialog" aria-labelledby="modalDraftAddTitle" aria-hidden="true">
+    <?php echo $__env->make('includes.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <!-- Modal Product Add -->
+    <div class="modal fade t-black" id="modalProductAdd" tabindex="-1" role="dialog" aria-labelledby="modalProductAddTitle" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-primary">
-                    <h5 class="modal-title text-white" id="modalDraftAddTitle">Agregar Proyecto</h5>
+                    <h5 class="modal-title text-white" id="modalProductAddTitle">Agregar Producto</h5>
                     <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
-                <form method="post" action="{{ url('/admin/drafts') }}">
+                <form method="post" action="<?php echo e(url('/admin/products')); ?>">
                     <div class="modal-body text-left">
-                        {{ csrf_field() }}
+                        <?php echo e(csrf_field()); ?>
+
                         <div class="form-group col-md-12">
-                            <label for="title" class="col-form-label">Título:</label>
-                            <input class="form-control" type="text" name="title" id="title" autofocus>
+                            <label for="name" class="col-form-label">Producto:</label>
+                            <input class="form-control" type="text" name="name" id="name" autofocus>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="description" class="col-form-label">Descripción:</label>
-                            <textarea class="form-control" placeholder="Descripción del proyecto" rows="5" name="description"></textarea>
+                            <textarea class="form-control" placeholder="Descripción del producto" rows="5" name="description"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -184,9 +186,9 @@
             </div>
         </div>
     </div>
-    <!-- End Modal Draft Add -->
-@endsection
-@section('scripts')
+    <!-- End Modal Product Add -->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
     <script>
@@ -198,7 +200,7 @@
         });
 
         $(document).ready(function() {
-            $('#draftsTable').DataTable({
+            $('#productsTable').DataTable({
                 language: {
                     "decimal": "",
                     "emptyTable": "No hay información",
@@ -235,4 +237,6 @@
             $("ul.pagination").addClass("pagination-sm");
         } );
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\TechMDQ\Downloads\developer\he\resources\views/admin/products/index.blade.php ENDPATH**/ ?>

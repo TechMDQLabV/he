@@ -10,8 +10,8 @@
 
 @section('content')
 
-    <section class="container div_trans8 corner4 mt-5 mb-4 p-4">
-        <div class="section text-center">
+    <header class="">
+        <div class="text-center container div_trans8 corner4 mb-4 p-4">
             <h2 class="text-white mb-5">Imágenes del producto "{{ $draft->title }}"</h2>
 
             <form method="post" action="" enctype="multipart/form-data">
@@ -62,7 +62,8 @@
                         <!-- End Modal Delete Proyect -->
                 @endforeach
             </div>
-    </section>
+    </header>
     <p>&nbsp;</p>
 
+    @include('includes.footer')
 @endsection
