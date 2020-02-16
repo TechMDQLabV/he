@@ -10,9 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
-    return view('welcome');
+    Route::get('/', 'HomeController@index');
+    //return view('welcome');
+})->name('home');
+*/
+Route::get('/', 'HomeController@index');
+Route::get('/drafts', 'HomeController@drafts');
+
+Route::get('/home/contacto', function(){
+    return redirect()->to(route('home').'#contact');
 });
 
 Route::get('logout', function ()
@@ -24,6 +32,39 @@ Route::get('logout', function ()
 })->name('logout');
 
 Auth::routes();
+
+
+Route::get('/productos', function(){
+   return view('products.products');
+})->name('products');
+
+Route::get('/productos/deteccion', function(){
+    return redirect()->to(route('products').'#deteccion');
+});
+
+Route::get('/productos/extincion', function(){
+    return redirect()->to(route('products').'#extincion');
+});
+
+Route::get('/servicios', function(){
+    return view('services.services');
+})->name('services');
+
+Route::get('/servicios/dyc', function(){
+    return redirect()->to(route('services').'#dyc');
+});
+
+Route::get('/servicios/provision', function(){
+    return redirect()->to(route('services').'#provision');
+});
+
+Route::get('/servicios/instalaciones', function(){
+    return redirect()->to(route('services').'#instalaciones');
+});
+
+Route::get('/servicios/mantenimiento', function(){
+    return redirect()->to(route('services').'#mantenimiento');
+});
 
 Route::prefix('admin')->namespace('Admin')->group(function(){
     Route::get('/drafts', 'DraftController@index');

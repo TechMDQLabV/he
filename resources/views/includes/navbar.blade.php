@@ -14,47 +14,47 @@
             <ul class="navbar-nav ml-auto">
                 @if (Request::path()!='/')
                 <li class="nav-item ">
-                    <a class="nav-link text-white" href="{{ url('/') }}" title="Inicio"><span class="font24 t-red ml-2"><b>I</b></span>nicio</a>
+                    <a class="nav-link text-white" href="{{ url('/') }}" title="Inicio">Inicio</a>
                 </li>
                 @endif
                 <li class="nav-item ">
-                    <a class="nav-link text-white" href="#" title="Empresa"><span class="font24 t-red ml-2"><b>E</b></span>mpresa</a>
+                    <a class="nav-link text-white" href="{{ url('/') }}" title="Empresa">Empresa</a>
                 </li>
                 <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="font24 t-red ml-2"><b>S</b></span>ervicios</a>
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item textext-white" href="#" title="Diseño y Cálculo"><i class="fa fa-check t-red"></i>&nbsp;Diseño y Cálculo</a>
-                        <a class="dropdown-item textext-white" href="#" title="Provisión de Equipamiento"><i class="fa fa-check t-red"></i>&nbsp;Provisión de Equipamiento</a>
-                        <a class="dropdown-item textext-white" href="#" title="Instalaciones"><i class="fa fa-check t-red"></i>&nbsp;Instalaciones</a>
-                        <a class="dropdown-item textext-white" href="#" title="Mantenimiento"><i class="fa fa-check t-red"></i>&nbsp;Mantenimiento</a>
+                        <a class="dropdown-item" href="{{ url('/servicios/dyc') }}" title="Diseño y Cálculo"><i class="fa fa-check t-red"></i>&nbsp;Diseño y Cálculo</a>
+                        <a class="dropdown-item" href="{{ url('/servicios/provision') }}" title="Provisión de Equipamiento"><i class="fa fa-check t-red"></i>&nbsp;Provisión de Equipamiento</a>
+                        <a class="dropdown-item" href="{{ url('/servicios/instalaciones') }}" title="Instalaciones"><i class="fa fa-check t-red"></i>&nbsp;Instalaciones</a>
+                        <a class="dropdown-item" href="{{ url('/servicios/mantenimiento') }}" title="Mantenimiento"><i class="fa fa-check t-red"></i>&nbsp;Mantenimiento</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="font24 t-red ml-2"><b>P</b></span>roductos</a>
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item textext-white" href="#" title="Detección"><i class="fa fa-check t-red"></i>&nbsp;Detección</a>
-                        <a class="dropdown-item textext-white" href="#" title="Extinción"><i class="fa fa-check t-red"></i>&nbsp;Extinción</a>
+                        <a class="dropdown-item" href="{{ url('/productos/deteccion') }}" title="Detección"><i class="fa fa-check t-red"></i>&nbsp;Detección</a>
+                        <a class="dropdown-item" href="{{ url('/productos/extincion') }}" title="Extinción"><i class="fa fa-check t-red"></i>&nbsp;Extinción</a>
                     </div>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-white" href="#projects" title="Proyectos"><span class="font24 t-red ml-2"><b>P</b></span>royectos</a>
+                    <a class="nav-link text-white" href="{{ url('/drafts') }}" title="Proyectos">Proyectos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#contact" title="Contacto"><span class="font24 t-red ml-2"><b>C</b></span>ontacto</a>
+                    <a class="nav-link text-white" href="{{ url('/home/contacto') }}" title="Contacto">Contacto</a>
                 </li>
 
                 @if (Auth::check())
                     <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="font24 t-red ml-2"><b>A</b></span>dministrador</a>
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrador</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item textext-white" href="{{ url('/admin/drafts') }}" title="Proyectos"><i class="fas fa-drafting-compass t-red"></i>&nbsp;Proyectos</a>
-                            <a class="dropdown-item textext-white" href="{{ url('/admin/products') }}" title="Productos"><i class="fab fa-product-hunt t-red"></i>&nbsp;Productos</a>
-                            <a class="dropdown-item textext-white" href="{{ route('logout') }}" title="Log Out"><i class="fas fa-sign-out-alt t-red"></i>&nbsp;Cerrar Cesión</a>
+                            <a class="dropdown-item" href="{{ url('/admin/drafts') }}" title="Proyectos"><i class="fas fa-drafting-compass t-red"></i>&nbsp;Proyectos</a>
+                            <a class="dropdown-item" href="{{ url('/admin/products') }}" title="Productos"><i class="fab fa-product-hunt t-red"></i>&nbsp;Productos</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}" title="Log Out"><i class="fas fa-sign-out-alt t-red"></i>&nbsp;Cerrar Cesión</a>
                         </div>
                     </li>
                     @else
                     <li class="nav-item mr-4">
-                        <a class="nav-link text-white" href="{{ url('login') }}" title="Log-In"><span class="font24 t-red ml-2"><b>I</b></span>ngresar</a>
+                        <a class="nav-link text-white" href="{{ url('login') }}" title="Log-In">Ingresar</a>
                     </li>
                 @endif
             </ul>

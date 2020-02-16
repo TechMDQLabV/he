@@ -10,8 +10,8 @@
 
 @section('content')
 
-    <section class="container div_trans8 corner4 mt-5 mb-4 p-4">
-        <div class="text-white">
+    <header class="">
+        <div class="text-white container div_trans8 corner4 mb-4 p-4">
             <h2 class="text-center">Listado de Proyectos</h2>
             @if (session('notification'))
                 <div class="alert alert-success">
@@ -152,8 +152,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </header>
     <p>&nbsp;</p>
+    @include('includes.footer')
 
     <!-- Modal Draft Add -->
     <div class="modal fade t-black" id="modalDraftAdd" tabindex="-1" role="dialog" aria-labelledby="modalDraftAddTitle" aria-hidden="true">

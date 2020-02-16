@@ -10,8 +10,8 @@
 
 @section('content')
 
-    <section class="container div_trans8 corner4 mt-5 mb-4 p-4">
-        <div class="text-white">
+    <header class="">
+        <div class="text-white container div_trans8 corner4 mb-4 p-4">
             <h2 class="text-center">Listado de Productos</h2>
             @if (session('notification'))
                 <div class="alert alert-success">
@@ -144,16 +144,17 @@
                                 </table>
 
                             @else
-                                <h4>No hay proyectos cargados</h4>
+                                <h4>No hay productos cargados</h4>
                             @endif
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
     <p>&nbsp;</p>
 
+    @include('includes.footer')
     <!-- Modal Product Add -->
     <div class="modal fade t-black" id="modalProductAdd" tabindex="-1" role="dialog" aria-labelledby="modalProductAddTitle" aria-hidden="true">
         <div class="modal-dialog modal-md modal-dialog-centered" role="document">
