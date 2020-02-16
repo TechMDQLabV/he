@@ -69,7 +69,7 @@
 </div>
 <div class="loader"></div>
 @include('includes.navbar')
-<div class="wrapper">
+<div class="">
     @yield('content')
 </div>
 

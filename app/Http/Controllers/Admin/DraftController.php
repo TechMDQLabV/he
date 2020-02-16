@@ -17,10 +17,7 @@ class DraftController extends Controller
      */
     public function index()
     {
-
         $drafts = Draft::all();
-
-        //return view('admin.drafts.index');
         return view('admin.drafts.index')->with(compact('drafts'));
     }
 
