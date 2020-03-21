@@ -54,22 +54,22 @@
             }
         }
         preload(
-                "{{ asset('./images/backgrounds/back0.jpg') }}",
-				"{{ asset('./images/backgrounds/back1.jpg') }}",
-				"{{ asset('./images/backgrounds/back2.jpg') }}",
-				"{{ asset('./images/backgrounds/back3.jpg') }}",
-				"{{ asset('./images/backgrounds/back4.jpg') }}",
-				"{{ asset('./images/backgrounds/back5.jpg') }}",
-				"{{ asset('./images/backgrounds/back6.jpg') }}",
-				"{{ asset('./images/backgrounds/back7.jpg') }}",
-				"{{ asset('./images/backgrounds/back8.jpg') }}"
+                "{{ asset('images/backgrounds/back0.jpg') }}",
+				"{{ asset('images/backgrounds/back1.jpg') }}",
+				"{{ asset('images/backgrounds/back2.jpg') }}",
+				"{{ asset('images/backgrounds/back0.jpg') }}",
+				"{{ asset('images/backgrounds/back1.jpg') }}",
+				"{{ asset('images/backgrounds/back2.jpg') }}",
+				"{{ asset('images/backgrounds/back0.jpg') }}",
+				"{{ asset('images/backgrounds/back1.jpg') }}",
+				"{{ asset('images/backgrounds/back2.jpg') }}"
         )
         //--><!]]>
     </script>
 </div>
 <div class="loader"></div>
 @include('includes.navbar')
-<div class="wrapper">
+<div class="">
     @yield('content')
 </div>
 

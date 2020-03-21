@@ -10,23 +10,23 @@
 
 @section('content')
 
-    <section class="container div_trans8 corner4 mt-5 mb-4 p-4">
-        <div class="section text-center">
+    <header class="">
+        <div class="text-center container div_trans8 corner4 mb-4 p-4">
             <h2 class="text-white mb-5">Imágenes del producto "{{ $draft->title }}"</h2>
-
-            <form method="post" action="" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                <input class="text-white" type="file" name="photo" required>
-                <button type="submit" class="btn btn-outline-danger btn-round">Subir nueva imagen</button>
-                <a href="{{ url('/admin/drafts') }}" class="btn btn-outline-danger btn-round">Volver al listado de proyectos</a>
-            </form>
-
+            <div class="row div_trans5 corner4 justify-content-center p-3 ml-5 mr-5">
+                <form method="post" action="" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    <input class="text-white" type="file" name="photo" required>
+                    <button type="submit" class="btn btn-outline-danger btn-round">Subir nueva imagen</button>
+                    <a href="{{ url('/admin/drafts') }}" class="btn btn-outline-danger btn-round">Volver al listado de proyectos</a>
+                </form>
+            </div>
             <hr>
 
             <div class="row">
                 @foreach ($images as $image)
                         <div class="card col-lg-4 mb-2" >
-                            <img class="card-img-top mt-2" src="{{ $image->url }}">
+                            <img class="card-img-top mt-2" src="{{ asset($image->url) }}">
                             <div class="card-body">
                                 <a href="#modalDeleteDraftImage{{$image->id}}" class="btn btn-outline-danger btn-sm btn-round m-2" type="button" title="Eliminar imágen de {{ $draft->title }}" data-toggle="modal" data-target="#modalDeleteDraftImage{{$image->id}}">Eliminar Imágen</a>
                             </div>
@@ -43,7 +43,7 @@
                                     <div class="modal-body text-dark">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <img class="" src="{{ $image->url }}" width="200">
+                                                <img class="" src="{{ asset($image->url) }}" width="200">
                                             </div>
                                         </div>
                                     </div>
@@ -62,7 +62,8 @@
                         <!-- End Modal Delete Proyect -->
                 @endforeach
             </div>
-    </section>
+    </header>
     <p>&nbsp;</p>
 
+    @include('includes.footer')
 @endsection

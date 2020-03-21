@@ -10,8 +10,8 @@
 
 @section('content')
 
-    <section class="container div_trans8 corner4 mt-5 mb-4 p-4">
-        <div class="text-white">
+    <header class="">
+        <div class="text-white container div_trans8 corner4 mb-4 p-4">
             <h2 class="text-center">Listado de Proyectos</h2>
             @if (session('notification'))
                 <div class="alert alert-success">
@@ -37,7 +37,7 @@
                                     @foreach ($drafts as $draft)
                                         <tr>
                                             <td class="text-left">{{ $draft->title }}</td>
-                                            <td class="text-left">{{ $draft->description }}</td>
+                                            <td class="text-left"><p class="card-text" data-toggle="tooltip" data-html="true" title="{{ $draft->description }}">{{ Str::limit($draft->description,150,' ...') }}</p></td>
                                             <td class="text-center">
                                                 <a href="#modalDraftDetail{{$draft->id}}" class="btn btn-outline-dark btn-sm" type="button" title="Detalle de {{ $draft->title }}" data-toggle="modal"  data-target="#modalDraftDetail{{$draft->id}}">&nbsp;<i class="fa fa-info t-yellow">&nbsp;</i></a>
                                                 <a href="#modalDraftEdit{{$draft->id}}" class="btn btn-outline-dark btn-sm" type="button" title="Editar Proyecto {{ $draft->title }}" data-toggle="modal" data-target="#modalDraftEdit{{$draft->id}}"><i class="fa fa-edit t-blue"></i></a>
@@ -152,8 +152,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </header>
     <p>&nbsp;</p>
+    @include('includes.footer')
 
     <!-- Modal Draft Add -->
     <div class="modal fade t-black" id="modalDraftAdd" tabindex="-1" role="dialog" aria-labelledby="modalDraftAddTitle" aria-hidden="true">

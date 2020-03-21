@@ -1,5 +1,5 @@
 body {
-    padding-top: 90px;
+    padding-top: 0px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     /*background-color: #000000;*/
@@ -11,13 +11,15 @@ body {
     -o-background-size: cover;
     background-size: cover;
     margin-bottom: 60px;
+    overflow-x:hidden;
  /*   background-image: url(../images/backgrounds/IMG_20191029_141726586.jpg);
     background-image: url(../images/backgrounds/IMG_20191218_155115192.jpg);*/
 }
+/*
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     display: block;
 }
-
+*/
 hr {
     box-sizing: content-box;
     height: 0;
@@ -25,10 +27,10 @@ hr {
 }
 
 .page-section {
-    padding: 8rem 0;
+    /*padding: 8rem 0;*/
 }
 
-section {
+section, header {
     padding-top: 130px;
 }
 
@@ -46,30 +48,19 @@ footer {
     line-height: 60px; /* Vertically center the text there */
 }
 
-area {
-   background-color:transparent;
-   }
-
-area:hover {
-   background-color:rgba(222,255,47,10);
-   }
-
-map {
-   background-color:#999;
-   }
-
-map:hover {
-   background-color:rgba(173,255,47,10);
-   }
-
 #div_transparente {
         background-color: rgba(0, 0, 0, 0.2);
 }
 
+a:link
+{
+    text-decoration:none;
+}
+/*
 .center {
     margin: 30px;
 }
-
+*/
 .bg {
     background-repeat: no-repeat;
   /*  background-attachment: fixed;
@@ -78,10 +69,10 @@ map:hover {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: contain;
-    margin: 5px;
+/*    margin: 5px;*/
     background-image: url(../images/he-logo.jpg);
 }
-
+/*
 .top {
      margin-left: 30px;
      margin-right: 30px;
@@ -105,7 +96,7 @@ map:hover {
      margin-left: 30px;
      margin-bottom: 30px;
 }
-
+*/
 .div_trans2 { background-color: rgba(0, 0, 0, 0.2); }
 .div_trans5 { background-color: rgba(0, 0, 0, 0.5); }
 .div_trans8 { background-color: rgba(0, 0, 0, 0.8); }
@@ -130,8 +121,8 @@ map:hover {
 .b-yellow { background-color: #ffc107;}
 .b-black { background-color: #000000;}
 
-.font12 { font-size: 8px;}
-.font12 { font-size: 10px;}
+.font8 { font-size: 8px;}
+.font10 { font-size: 10px;}
 .font12 { font-size: 12px;}
 .font14 { font-size: 14px;}
 .font16 { font-size: 16px;}
@@ -159,15 +150,17 @@ map:hover {
 .corner4 {
     border-radius: 25px;
 }
-
+.corner5 {
+    border-radius: 20px;
+}
 .flexGrow {
     flex-grow: 1;
 }
 
-	img[usemap] {
+img[usemap] {
 		border: none;
 		height: auto;
 		max-width: 100%;
 		width: 100%;
-	}
+}
 -->
