@@ -1,3 +1,4 @@
+<!-- comentario -->
 @extends('layouts.app')
 
 @section('title', 'HE Hidro Extinción')
