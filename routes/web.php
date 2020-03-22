@@ -33,7 +33,7 @@ Route::get('logout', function ()
     return Redirect::to('/');
 })->name('logout');
 
-//Auth::routes();
+//Auth::routes(); ahora no se pueden registrar
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
