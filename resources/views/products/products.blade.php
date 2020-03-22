@@ -117,7 +117,7 @@
     <section class="masthead mt-5" id="listado">
         <div class=" div_trans8">
             <div class="row h-100 align-items-center justify-content-center text-center">
-                <div class="col-lg-10 align-self-end">
+                <div class="col-lg-12 align-self-end">
                     <h2 class="text-uppercase text-white font-weight-bold mb-4 mt-4">Lista de Productos</h2>
                     <p class="text-white font-weight-light mb-5"></p>
                     <hr class="divider m-4">
@@ -151,7 +151,7 @@
                     </div>
 
 
-                    <a class="btn btn-outline-danger btn-xl js-scroll-trigger mb-5" href="#deteccion" title="Subir">Subir</a>
+                    <a class="btn btn-outline-danger btn-xl js-scroll-trigger mb-5" href="#deteccion" title="Continuar">Continuar</a>
                 </div>
             </div>
         </div>
@@ -166,8 +166,8 @@
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-            if ( $( '[name="anchor"]' ).length ) {
-                window.location = "#" + $( '[name="anchor"]' ).val();
+            if ( $('[name="anchor"]').length ) {
+                window.location = "#" + $('[name="anchor"]').val();
             }
         });
 
@@ -194,7 +194,7 @@
                     }
                 },
                 "lengthMenu":		[[5, 10, 20, 30, 50, 100, -1], [ 5, 10, 20, 30, 50, 100, "Todos"]],
-                "iDisplayLength":	20,
+                "iDisplayLength":	10,
                 "bJQueryUI":		false,
                 "aoColumns":[
                     {"bSortable": true},
@@ -204,7 +204,6 @@
             });
             $("input.form-control.form-control-sm").attr('placeholder', 'Buscar...');
             $("input.form-control.form-control-sm").attr('size', 30);
-            $("input.form-control.form-control-sm").focus();
             $("ul.pagination").addClass("pagination-sm");
         } );
 
