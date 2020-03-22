@@ -152,29 +152,9 @@
                     </form>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3 ml-auto text-center mb-5 mb-lg-0">
-                    <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-                    <div class="text-white-50">+54 (0223) 472-3400</div>
-                </div>
-                <div class="col-lg-3 mr-auto text-center mb-5">
-                    <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-                    <a class="d-block" href="mailto:contact@yourwebsite.com">hidroextincion@gmail.com</a>
-                </div>
-                <!--
-                <div class="col-lg-3 mr-auto text-center mb-5">
-                    <i class="fab fa-whatsapp fa-3x mb-3 text-muted"></i>
-                    <div class="text-white-50">+1 (202) 555-0149</div>
-                </div>
-                <div class="col-lg-3 mr-auto text-center mb-5">
-                    <i class="fab fa-facebook fa-3x mb-3 text-muted"></i>
-                    <div class="text-white-50">tu facebook</div>
-                </div>
-                -->
-            </div>
+
         </div>
     </section>
-
     @include('includes.footer')
 
 @stop

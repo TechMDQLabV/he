@@ -15,7 +15,7 @@
             <div class="row justify-content-center text-center">
                 <div class="col-lg-8">
                     <h2 class="text-uppercase text-white font-weight-bold mb-4 mt-4">Proyectos</h2>
-                    <h5 class="text-white ">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
+                    <h5 class="text-white "></h5>
                     <hr class="divider m-4">
                 </div>
                 <div class="row justify-content-center">

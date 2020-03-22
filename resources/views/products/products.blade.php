@@ -19,8 +19,8 @@
                     <hr class="divider m-4">
                 </div>
                 <div class="col-lg-6 align-self-baseline">
-                    <p class="text-white font-weight-light mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
-                    <p class="text-white font-weight-light mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
+                    <p class="text-white font-weight-light mb-5">Proveemos todo tipo de productos para la detección y alarma de incendios. Cubrimos desde la instalación de los mismos hasta la provisión de repuestos de líneas existentes.</p>
+                    <p class="text-white font-weight-light mb-5"></p>
                     <a class="btn btn-outline-danger btn-xl js-scroll-trigger mb-5" href="#extincion" title="Continuar">Continuar</a>
                 </div>
             </div>
@@ -37,8 +37,8 @@
                     <hr class="divider m-4">
                 </div>
                 <div class="col-lg-6 align-self-baseline">
-                    <p class="text-white font-weight-light mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
-                    <p class="text-white font-weight-light mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</p>
+                    <p class="text-white font-weight-light mb-5">Contamos una completa gama de productos para cubrir todo tipo de instalación para la lucha contra incendios. Desde instalaciones con hidrantes, sprinklers, CO2, líneas húmedas o secas, etc.</p>
+                    <p class="text-white font-weight-light mb-5"></p>
                     <a class="btn btn-outline-danger btn-xl js-scroll-trigger mb-5" href="#carousel" title="Continuar">Continuar</a>
                 </div>
             </div>

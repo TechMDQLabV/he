@@ -20,7 +20,7 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
-        $this->validate($request, Product::$rules, Product::$messages);
+        $this->validate($request, Product::$messages);
 
         $product = Product::create($request->only('name', 'description'));
 
