@@ -107,7 +107,7 @@
                             </a>
                         </div>
                     </div>
-                    <a class="btn btn-outline-light btn-xl js-scroll-trigger mt-5 mb-5" href="#listado" title="Continuar">Subir</a>
+                    <a class="btn btn-outline-light btn-xl js-scroll-trigger mt-5 mb-5" href="#listado" title="Continuar">Continuar</a>
                 </div>
             </div>
         </div>

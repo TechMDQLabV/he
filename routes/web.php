@@ -22,6 +22,8 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/contacto', function(){
     return redirect()->to(route('home').'#contact');
 });
+// formulario del email
+Route::post('/contact', 'HomeController@contact')->name('contact');
 
 Route::get('/drafts', 'HomeController@drafts');
 

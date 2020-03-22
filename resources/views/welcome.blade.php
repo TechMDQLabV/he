@@ -116,33 +116,34 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-white">
-                    <form>
+                    <form class="contact-form" method="POST" action="{{ route('contact') }}">
+                        {{ csrf_field() }}    
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputName">Nombre</label>
-                                <input type="text" class="form-control" id="inputName">
+                                <input type="text" class="form-control" id="inputName" name="name">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4">
+                                <input type="email" class="form-control" id="inputEmail4" name="email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Domicilio</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="Calle 1234">
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Calle 1234" name="address">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputCity">Ciudad</label>
-                                <input type="text" class="form-control" id="inputCity">
+                                <input type="text" class="form-control" id="inputCity" name="city">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputProvincia">Provincia</label>
-                                <input type="text" class="form-control" id="inputProvincia">
+                                <input type="text" class="form-control" id="inputProvincia" name='provincia'>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="inputCPostal">C.Postal</label>
-                                <input type="text" class="form-control" id="inputCPostal">
+                                <input type="text" class="form-control" id="inputCPostal" name="cpostal">
                             </div>
                         </div>
                         <div class="form-group text-center">
