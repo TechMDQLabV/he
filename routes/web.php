@@ -35,11 +35,16 @@ Route::get('logout', function ()
 
 Auth::routes();
 
+Route::prefix('productos')->group(function() {
+    Route::get('/find', 'ProductController@find');
+    Route::get('/deteccion', 'ProductController@detection');
+    Route::get('/extincion', 'ProductController@extintion');
+});
 
 Route::get('/productos', function(){
    return view('products.products');
 })->name('products');
-
+/*
 Route::get('/productos/deteccion', function(){
     return redirect()->to(route('products').'#deteccion');
 });
@@ -47,6 +52,7 @@ Route::get('/productos/deteccion', function(){
 Route::get('/productos/extincion', function(){
     return redirect()->to(route('products').'#extincion');
 });
+*/
 
 Route::get('/servicios', function(){
     return view('services.services');
