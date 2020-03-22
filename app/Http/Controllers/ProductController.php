@@ -10,20 +10,22 @@ class ProductController extends Controller
     public function find()
     {
         $products = Product::all();
-        return redirect()->to(route('products').'#list')->with(compact('products'));
+        $anchor = "listado";
+        return view('products.products')->with(compact('products','anchor'));
     }
 
     public function detection()
     {
         $products = Product::all();
-        var_dump($products);
-        //return redirect()->route('products',compact('products')).'#deteccion';
-        return view('products')->with(compact('product')).'#deteccion'; // form de edición
+        $anchor = "deteccion";
+        return view('products.products')->with(compact('products','anchor'));
     }
 
     public function extintion()
     {
         $products = Product::all();
-        return redirect()->to(route('products').'#extincion')->with(compact('products'));
+        $anchor = "extincion";
+        //return redirect()->to(route('products').'#extincion')->with(compact('products'));
+        return view('products.products')->with(compact('products','anchor'));
     }
 }

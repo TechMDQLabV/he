@@ -34,6 +34,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ url('/productos/deteccion') }}" title="Detección"><i class="fa fa-check t-red"></i>&nbsp;Detección</a>
                         <a class="dropdown-item" href="{{ url('/productos/extincion') }}" title="Extinción"><i class="fa fa-check t-red"></i>&nbsp;Extinción</a>
+                        <a class="dropdown-item" href="{{ url('/productos/listado') }}" title="Listado"><i class="fa fa-check t-red"></i>&nbsp;Listado</a>
                     </div>
                 </li>
                 <li class="nav-item ">

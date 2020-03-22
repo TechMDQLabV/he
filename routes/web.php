@@ -33,6 +33,7 @@ Route::get('logout', function ()
     return Redirect::to('/');
 })->name('logout');
 
+
 //Auth::routes(); ahora no se pueden registrar
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -49,15 +50,21 @@ Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
+
 Route::prefix('productos')->group(function() {
-    Route::get('/find', 'ProductController@find');
+    Route::get('/listado', 'ProductController@find');
     Route::get('/deteccion', 'ProductController@detection');
     Route::get('/extincion', 'ProductController@extintion');
 });
-
+/*
 Route::get('/productos', function(){
    return view('products.products');
 })->name('products');
+
+Route::get('/productos/detection', function(){
+    return view('products','#deteccion');
+})->name('products.detection');
+
 /*
 Route::get('/productos/deteccion', function(){
     return redirect()->to(route('products').'#deteccion');
