@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 use App\Model\Draft;
 use App\Model\Product;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -51,5 +53,20 @@ class HomeController extends Controller
         $products = Product::where('name','like',$search.'%');
 
         return view('products.products')->with(compact('products'));
+    }
+
+    public function contact(Request $request){
+       
+        //dd($request);
+        $for = "hidroextincion@gmail.com";
+        $subject = "Consultas de la Web Hidroextincion.com.ar";
+        //dd($subject);
+         Mail::send('email.consultaEmail',$request->all(), function($msj) use($subject,$for){
+            $msj->from("hidroextincion@gmail.com","Consultas para Hidro extinción");
+            $msj->subject($subject);
+            $msj->to($for);
+        });       
+       
+        return redirect('/');
     }
 }
