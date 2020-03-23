@@ -58,11 +58,11 @@ class HomeController extends Controller
     public function contact(Request $request){
        
         //dd($request);
-        $for = "hidroextincion@gmail.com";
+        $for = "info@hidroextincion.com.ar";
         $subject = "Consultas de la Web Hidroextincion.com.ar";
         //dd($subject);
          Mail::send('email.consultaEmail',$request->all(), function($msj) use($subject,$for){
-            $msj->from("hidroextincion@gmail.com","Consultas para Hidro extinción");
+            $msj->from("info@hidroextincion.com.ar","Consultas para Hidro extinción");
             $msj->subject($subject);
             $msj->to($for);
         });       
