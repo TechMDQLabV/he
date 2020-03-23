@@ -22,7 +22,7 @@
                 @foreach($draftsWithImages as $draft)
                     <div class="card col-md-3 m-2">
                         @foreach($draft->images as $image)
-                        <a href="{{ asset($image->url) }}" data-toggle="lightbox" data-gallery="projects-lightbox{{ $draft->id }}" data-title="{{ $draft->title }}" data-footer="{{ $draft->description }}" class="">
+                        <a href="{{ asset($image->url) }}" data-toggle="lightbox" data-gallery="projects-lightbox{{ $draft->id }}" data-title="{{ $draft->title }}" class="">
                             <img class="img-fluid card-img-top {{ ($loop->first) ? "" : "d-none" }}" src="{{ asset($image->url) }}" alt="">
                         </a>
                         @endforeach
